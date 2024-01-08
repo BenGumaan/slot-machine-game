@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Slot Machine Game</title>
+</head>
+<body>
+    
+    <!-- Preloader -->
+    <!-- <div id="preloader"></div> -->
+
+    <div class="container">
+
+        <!-- Header -->
+        <header>
+            <div class="top">
+                <ul class="left-items">
+                    <a href="#_"><li class="cta" id="info-btn" data-name="info"><i class="fa-solid fa-circle-info"></i></li></a>
+                    <a href="#_"><li class="cta" id="sound-btn" data-name="sound"><i class="fa-solid fa-volume-high"></i></li></a>
+                    <!-- <a href="#_"><li class=""><i class="fa-solid fa-volume-xmark"></i></li></a> -->
+                </ul>
+                <ul class="right-items">
+                    <a href="#_"><li class="cta" data-name="login"><i class="fa-solid fa-right-to-bracket"></i></li></a>
+                    <a href="#_"><li class="cta" data-name="register"><i class="fa-solid fa-user-plus"></i></li></a>
+                </ul>
+            </div>
+            <div class="welcome-message">
+                <p>Welcome, <span id="name">guest</span> 👋</p>
+            </div>
+        </header>
+
+        <main>
+            <!-- Spin Section -->
+            <div class="spin-container">    
+                <ul>
+                    <!-- <li class="door"><img src="images/question-mark-clipart-printable-3-1523808405.png" alt=""></li>
+                    <li class="door"><img src="images/question-mark-clipart-printable-3-1523808405.png" alt=""></li>
+                    <li class="door"><img src="images/question-mark-clipart-printable-3-1523808405.png" alt=""></li> -->
+                    <li class="door"><span class="boxes">X</span></li>
+                    <li class="door"><span class="boxes">X</span></li>
+                    <li class="door"><span class="boxes">X</span></li>
+                </ul>
+            </div>
+
+            <div class="action-btns">
+                <button class="deposit-btn cta" data-name="deposit"><i class="fa-solid fa-money-bill-transfer"></i> Deposit</button>
+                <button id="reseter" class="reset-btn cta"><i class="fa-solid fa-rotate-right"></i> Reset</button>
+                <button id="spinner" class="spin-btn cta"><i class="fa-solid fa-compass"></i> Take a Spin!</button>
+            </div>
+                
+            <div class="result-msg">
+                <p id="result-msg">Welcome, guest 👋</p>
+            </div>
+
+            <div class="dashboard">
+                <ul class="dash-container">
+                    <li class="account-balance">
+                        <div class="header">
+                            <p>Account Balance</p>
+                        </div>
+                        <div class="body">
+                            <p class="balance-amount">$<span id="balance-amount" >1000</span></p>
+                            <p id="bet-amount">-$<span id="bet-asmount" >0</span></p>
+                        </div>
+                    </li>
+                    <li class="bet">
+                        <div class="header">
+                            <p>Bet</p>
+                        </div>
+                        <div class="body">
+                            <ul class="amount">
+                                <li id="decrease-bet"><i class="fa-solid fa-minus"> 10</i></li>
+                                <li id="bet-amount-x">$ <input type="number" name="" id="bet-amount-input" value="100"></li>
+                                <li id="increase-bet"><i class="fa-solid fa-plus"> 10</i></li>
+                            </ul>
+                            <ul class="ready-bet">
+                                <li data-amount="10">$10</li>
+                                <li data-amount="50">$50</li>
+                                <li data-amount="100"class="active">$100</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="win">
+                        <div class="header">
+                            <p>Win</p>
+                        </div>
+                        <div class="body">
+                            <p class="win-amount">$<span id="win-amount">0</span></p>
+                            <button class="cta" data-name="withdrawal"><i class="fa-solid fa-money-bill-transfer"></i> Withdrawal</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="transactions-log">
+                <ul>
+                    <li id="transaction-history">
+                        <button class="cta" id="transactions" data-name="transactions">Transactions History</button>
+                    </li>
+                    <li id="payouts">
+                        <button class="cta" id="payouts" data-name="payouts">Payouts</button>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <!-- Modals -->
+
+        <!-- Info-modal -->
+        <div id="info-modal" class="modal" data-name="info">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <p class="title"><i class="fa-solid fa-circle-info"></i> User Information</p>
+                <form action="">
+                    <div class="form-fields">
+                        <div class="field">
+                            <label for="">Username:</label>
+                            <input type="text" id="info-username" disabled>
+                        </div>
+                        <div class="field">
+                            <label for="">Email:</label>
+                            <input type="email" id="info-email" disabled>
+                        </div>
+                        <div class="field">
+                            <label for="">Date joined:</label>
+                            <input type="text" id="info-dateJoined" disabled>
+                        </div>    
+                    </div>
+                </form>
+                <div class="close-btn">
+                    <button>Close</button>
+                </div>
+                <span class="close close-btn"><i class="fa-solid fa-circle-xmark"></i></span>
+            </div>
+        
+        </div>
+        <!-- register-modal -->
+        <div id="register-modal" class="modal" data-name="register">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <p class="title"><i class="fa-solid fa-user-plus"></i> Register New User</p>
+                <form action="" onsubmit="signUp()">
+                    <div class="form-fields">
+                        <div class="field">
+                            <label for="">Username:</label>
+                            <input type="text" id="reg-username">
+                        </div>
+                        <div class="field">
+                            <label for="">Email:</label>
+                            <input type="email" id="reg-email">
+                        </div>
+                        <div class="field">
+                            <label for="">Password:</label>
+                            <input type="password" id="reg-password">
+                        </div>
+                    </div>
+                    <div class="">
+                        <button id="register-btn" type="submit">Register</button>
+                    </div>
+                </form>
+                <span class="close close-btn"><i class="fa-solid fa-circle-xmark"></i></span>
+            </div>
+        
+        </div>
+        <!-- login-modal -->
+        <div id="login-modal" class="modal" data-name="login">
+
+            <div class="modal-content">
+                <p class="title"><i class="fa-solid fa-right-to-bracket"></i> Log-in</p>
+                <form action="" onsubmit="signIn()">
+                    <div class="form-fields">
+                        <div class="field">
+                            <label for="">Username:</label>
+                            <input type="text" id="username">
+                        </div>
+                        <div class="field">
+                            <label for="">Password:</label>
+                            <input type="password" id="password">
+                        </div>
+                    </div>
+                    <div class="">
+                        <button id="login-btn" type="submit">Login</button>
+                    </div>
+                </form>
+                <span class="close close-btn"><i class="fa-solid fa-circle-xmark"></i></span>
+            </div>
+        
+        </div>
+        <!-- deposit-modal -->
+        <div id="deposit-modal" class="modal" data-name="deposit">
+
+            <div class="modal-content">
+                <p class="title"><i class="fa-solid fa-money-bill-transfer"></i> Deposit</p>
+                <form action="">
+                    <div class="field">
+                        <label for="">Amount:</label>
+                        <input id="addedAmount" type="text">
+                    </div>
+                </form>
+                <div class="">
+                    <button id="deposit-btn" class="">Deposit</button>
+                </div>
+                <span class="close close-btn"><i class="fa-solid fa-circle-xmark"></i></span>
+            </div>
+        
+        </div>
+        <!-- withdrawal-modal -->
+        <div id="withdrawal-modal" class="modal" data-name="withdrawal">
+
+            <div class="modal-content">
+                <p class="title"><i class="fa-solid fa-money-bill-transfer"></i> Withdrawal</p>
+                <form action="">
+                    <div class="field">
+                        <label for="">Amount:</label>
+                        <input id="subtractedAmount" type="text">
+                    </div>
+                </form>
+                <div class="">
+                    <button id="withdrawal-btn" class="">Withdraw</button>
+                </div>
+                <span class="close close-btn"><i class="fa-solid fa-circle-xmark"></i></span>
+            </div>
+        </div>
+
+        <!-- Transactions-modal -->
+        <div id="transactions-modal" class="modal" data-name="transactions">
+
+            <div class="modal-content">
+                <p class="title"><i class="fa-solid fa-money-bill-transfer"></i> Last 5 Transactions</p>
+                <div id="transactions-table" class="transactions-table"></div>
+                <div class="close-btn">
+                    <button>Close</button>
+                </div>
+                <span class="close close-btn"><i class="fa-solid fa-circle-xmark"></i></span>
+            </div>
+        
+        </div>
+        <!-- Payouts-modal -->
+        <div id="payouts-modal" class="modal" data-name="payouts">
+
+            <div class="modal-content">
+                <p class="title"><i class="fa-solid fa-money-bill-transfer"></i> Last 5 Payouts</p>
+                <div id="payouts-table" class="payouts-table"></div>
+                <div class="close-btn">
+                    <button>Close</button>
+                </div>
+                <span class="close close-btn"><i class="fa-solid fa-circle-xmark"></i></span>
+            </div>
+        
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Created with <span id="heart">♥</span> by <span>Ben Gumaan</span></p>
+        </footer>
+            
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/spinner.js"></script>
+    <script src="js/localStorage.js"></script>
+    <script src="js/sign-up.js"></script>
+
+</body>
+</html>

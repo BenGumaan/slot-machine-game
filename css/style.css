@@ -1,0 +1,747 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;800&display=swap');
+
+:root {
+    /* Colors */
+    --primary-color: #9B6F1D;
+    /* --primary-color: #9d7a39; */
+    --secondary-color: #00574A;
+    /* --secondary-color: #0e685a; */
+    --dark-brown: #504538;
+    --black: #261F22;
+    --white: #FFFFFF;
+    /* --light-bg: #F3F2F1; */
+    --light-bg: #DFE0DF;
+    --spin-bg: #F4F4F4;
+    --green: #008A65;
+    --blue: #0789eb;
+    /* --blue: #62ade6; */
+    --gray: #707070;
+    --field-bg: #F5F5F5;
+    --danger: #FF7676;
+    --inActive: #94928F;
+
+    /*  */
+    --l1: #FFF7E8; 
+    --l2: #FFEDCB;
+    --l3: #FFD984;
+    --l4: #D5A350;
+
+    /* Opacity */
+    --opacity-100: 100%;
+    --opacity-75: 75%;
+    --opacity-50: 50%;
+    --opacity-25: 25%;
+    --opacity-10: 10%;
+    --opacity-5: 5%;
+
+    /* Fonts and text sizing */
+    --font: 'Segoe UI', sans-serif;
+    --lg-text: 24px;
+    --md-text: 20px;
+    --sm-text: 16px;
+    --info-text: 18px;
+    
+    /* Mobile screens font sizes */
+    --lg-mobile-text: 16px;
+    --md-mobile-text: 14px;
+    --sm-mobile-text: 12px;
+
+    /* Font weight */
+    --extra-light: 200;
+    --light: 300;
+    --regular: 400;
+    --semi-bold: 600;
+    --extra-bold: 800;
+
+    /* Line height */
+    --LH-144: 144px;
+    --LH-132: 132px;
+    --LH-112: 112px;
+    --LH-100: 100px;
+    --LH-72: 72px;
+    --LH-56: 56px;
+    --LH-48: 48px;
+    --LH-40: 40px;
+    --LH-30: 30px;
+    --LH-28: 28px;
+    --LH-26: 26px;
+    --LH-24: 24px;
+    --LH-default: 1.6px;
+
+    /* Gap */
+    --g-lg: 64px;
+    --g-md: 32px;
+    --g-sm: 16px;
+    --g-xsm: 8px;
+
+    /* Margin */
+    --m-lg: 64px;
+    --m-md: 32px;
+    --m-sm: 16px;
+    --m-xsm: 8px;
+    /* Padding */
+    --p-lg: 64px;
+    --p-md: 32px;
+    --p-sm: 16px;
+    --p-xsm: 8px;
+
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+}
+
+p {
+	padding: 0;
+	margin: 0 auto;
+	color: var(--black);
+	text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 24px;
+}
+
+.center {
+    text-align: center !important;
+}
+
+.hide {
+    display: none;
+}
+.text-gradient {
+    /* Set the background color */
+    background: var(--gradient-color);
+    /* Mask the color to the text, and remove the rest  */
+    -webkit-background-clip: text;
+    /* Make the text fill color value transparent so the masked background color comes through */
+    -webkit-text-fill-color: transparent;
+}
+
+.email {
+    color: var(--primary-color);
+}
+
+.container {
+    background: rgb(223, 224, 223, 0.10);
+    border-radius: 8px;
+    border: 1px solid var(--primary-color);
+    width: 650px;
+    margin: 16px auto;
+    padding: 18px 24px;
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* ------------  Header section  ------------ */
+header {
+    display: flex;
+    flex-direction: column;
+    /* padding: 32px; */
+}
+header .top {
+    display: flex;
+    justify-content: space-between;
+}
+header i {
+    width: 32px;
+    color: var(--primary-color);
+}
+header .top .left-items {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: var(--menu-item);
+    line-height: var(--LH-24);
+    font-weight: var(--regular);
+    text-transform: capitalize;
+}
+header .top .right-items {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: var(--menu-item);
+    line-height: var(--LH-24);
+    font-weight: var(--regular);
+    text-transform: capitalize;
+}
+header .welcome-message {
+    background: rgb(223, 224, 223, 0.25);
+    height: 48px;
+    border-radius: 8px;
+    margin: 16px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .welcome-message #name {
+    color: var(--primary-color);
+    font-weight: var(--semi-bold);
+}
+
+/* ------------  Spin section  ------------ */
+.spin-container {
+    background: rgb(223, 224, 223, 0.25);
+    height: 176px;
+    border-radius: 8px;
+    margin: 16px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+.spin-container ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 64px;
+}
+.spin-container ul .door {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--white);
+    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4) inset;
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+.spin-container ul .door .boxes {
+    transition: transform 1s ease-in-out;
+}
+.spin-container ul .door .boxes .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+.spin-container ul li img {
+    width: 50%;
+    background: var(--white);
+}
+.action-btns #spinner:disabled,
+.action-btns #reseter:disabled {
+    background: #cfcfcf;
+    color: var(--inActive);
+}
+.action-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.action-btns button {
+    padding: 12px 32px;
+    border: none;
+    color: var(--white);
+    font-weight: var(--semi-bold);
+    font-size: var(--sm-text);
+    border-radius: 4px;
+}
+.action-btns button i {
+    margin-right: 8px;
+}
+.action-btns .deposit-btn {
+    background: #a18248;
+}
+.action-btns .deposit-btn:hover {
+    background: var(--primary-color);
+}
+.action-btns .reset-btn {
+    background: #1c7466;
+}
+.action-btns .reset-btn:hover {
+    background: var(--secondary-color);
+}
+.action-btns .spin-btn {
+    flex-grow: 1;
+    background: #1c7466;
+}
+.action-btns .spin-btn:hover {
+    background: var(--secondary-color);
+}
+
+.result-msg {
+    background: rgb(223, 224, 223, 0.25);
+    height: 48px;
+    border-radius: 8px;
+    margin: 16px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ------------  Dashboard section  ------------ */
+.dashboard {
+    
+}
+.dashboard .dash-container {
+    display: flex;
+    justify-content: space-between;
+}
+.dashboard .dash-container li {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.dashboard .dash-container li .header {
+    background: var(--dark-brown);
+    border-radius: 4px;
+}
+.dashboard .dash-container li .header p {
+    color: var(--white);
+    padding: 8px;
+}
+.dashboard .dash-container li .body {
+    display: flex;
+    flex-direction: column;
+    /* gap: 20px; */
+    justify-content: space-around;
+    background: var(--l1);
+    border-radius: 4px;
+    margin-top: 10px;
+    padding: 10px 18px;
+    height: 100px;
+}
+.dashboard .dash-container .account-balance .balance-amount {
+    color: var(--secondary-color);
+    font-weight: var(--semi-bold);
+}
+.dashboard .dash-container .account-balance #bet-amount {
+    color: var(--danger);
+    transform: translateY(-25px);
+    opacity: 0;
+
+    /* Transition + tranformation */
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-duration: 1s;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+}
+.dashboard .dash-container .bet .body .amount {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard .dash-container .bet .body .amount li {
+    flex-grow: 0;
+}
+.dashboard .dash-container .bet .body .amount #decrease-bet,
+.dashboard .dash-container .bet .body .amount #increase-bet {
+    background: var(--l2);
+    padding: 6px 8px;
+    border-radius: 2px;
+    color: var(--primary-color);
+    font-size: 12px;
+    cursor: pointer;
+}
+.dashboard .dash-container .bet .body .amount #decrease-bet:hover,
+.dashboard .dash-container .bet .body .amount #increase-bet:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+.dashboard .dash-container .bet .body .amount #bet-amount-x {
+    display: flex;
+    flex-direction: row;
+    padding: 4px 10px;
+    color: var(--black);
+    font-size: var(--md-text);
+}
+.dashboard .dash-container .bet .body .amount #bet-amount-x input {
+    width: 100px;
+    color: var(--black);
+    font-size: var(--sm-text);
+    margin-left: 8px;
+    border: 0.2px solid var(--l4);
+    border-radius: 4px;
+}
+.dashboard .dash-container .bet .body .amount #bet-amount-x input:focus {
+    outline: none;
+}
+.dashboard .dash-container .bet .body .ready-bet {
+    display: flex;
+    gap: 24px;
+}
+.dashboard .dash-container .bet .body .ready-bet li {
+    background: var(--l2);
+    color: var(--primary-color);
+    border-radius: 4px;
+    text-align: center;
+}
+.dashboard .dash-container .bet .body .ready-bet li.active {
+    background: var(--primary-color);
+    color: var(--white);
+}
+.dashboard .dash-container .bet .body .ready-bet li:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.dashboard .dash-container .win .body .win-amount {
+    color: var(--dark-brown);
+    font-weight: var(--semi-bold);
+}
+.dashboard .dash-container .win .body button {
+    background: var(--l2);
+    color: var(--primary-color);
+    border-radius: 4px;
+    text-align: center;
+    border: none;
+    padding: 8px 18px;
+}
+.dashboard .dash-container .win .body button i {
+    background: white;
+    color: var(--primary-color);
+    margin-right: 8px;
+}
+/* .dashboard .dash-container .win .body button:hover {
+    background: var(--primary-color);
+    color: var(--white);
+} */
+.dashboard .dash-container .win .body button:hover,
+.dashboard .dash-container .win .body button i {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+
+.transactions-log {
+    margin: 24px auto;
+}
+.transactions-log ul {
+    display: flex;
+    justify-content: space-between;
+}
+.transactions-log ul li {
+    /* display: flex; */
+    width: 100%;
+    flex-grow: 1;
+}
+.transactions-log ul li button {
+    background: #5ea6dd;
+    color: var(--white);
+    font-weight: var(--semi-bold);
+    font-size: var(--sm-text);
+    border-radius: 4px;
+    text-align: center;
+    border: none;
+    padding: 12px;
+    width: 100%;
+}
+.transactions-log ul li button:hover {
+    background: var(--blue);
+}
+
+/* ------------  Modals section  ------------ */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 40px;
+    border: 1px solid #888;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 8px;
+    height: auto;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+  }
+  .modal-content .title {
+    color: var(--primary-color);
+    font-weight: var(--semi-bold);
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+  .modal-content .title i {
+    color: var(--primary-color);
+    font-size: var(--md-text);
+    margin-right: 10px;
+  }
+  .modal-content form .form-fields {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .modal-content form .field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .modal-content form .field label {}
+  .modal-content form .field input {
+    background: var(--field-bg);
+    border-radius: 4px;
+    border: none;
+    /* width: 60%; */
+    height: 30px;
+    margin-top: 10px;
+    padding: 0 10px;
+  }
+  .modal-content form .field input:focus {
+    outline: none;
+  }
+  .modal-content .close-btn button {
+    padding: 8px 16px;
+    border: none;
+    background: var(--danger);
+    color: var(--white);
+    font-weight: var(--semi-bold);
+    font-size: var(--sm-text);
+    border-radius: 4px;
+    float: right;
+  }
+  .modal-content .close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: #aaaaaa;
+    font-size: var(--md-text);
+  }  
+  .modal-content .close:hover,
+  .modal-content .close:focus {
+    color: var(--danger);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .modal-content #register-btn,
+  .modal-content #login-btn,
+  .modal-content #deposit-btn,
+  .modal-content #withdrawal-btn {
+    padding: 8px 16px;
+    border: none;
+    background: var(--secondary-color);
+    color: var(--white);
+    font-weight: var(--semi-bold);
+    font-size: var(--sm-text);
+    border-radius: 4px;
+    float: right;
+  }
+  
+  .modal-content::-webkit-scrollbar {
+    width: 4px;               /* width of the entire scrollbar */
+  }
+  
+  .modal-content::-webkit-scrollbar-track {
+    background: var(--field-bg);        /* color of the tracking area */
+  }
+  
+  .modal-content::-webkit-scrollbar-thumb {
+    background-color: var(--field-bg);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid var(--primary-color);  /* creates padding around scroll thumb */
+  }
+
+
+  /* Table */
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+
+/* ------------  Footer section  ------------ */
+footer span {
+    font-weight: var(--semi-bold);
+}
+footer #heart {
+    color: var(--danger);
+    font-size: var(--sm-text);
+}
+
+
+
+
+
+/* Tablet Range: 1200px - 600px */
+@media only screen and (min-width: 600px) and (max-width: 715px) {
+
+}
+
+/* Tablet Range: 1200px - 600px */
+@media only screen and (min-width: 600px) and (max-width: 1200px) {
+    /* Default iPad screens */
+  
+}
+
+
+
+/* Phone Range: < 600px */
+@media only screen and (max-width: 600px) {
+    /* styles for mobile browsers smaller than 600px; (iPhone) */
+    .container {
+        background: rgb(223, 224, 223, 0.10);
+        border-radius: 8px;
+        border: 1px solid var(--primary-color);
+        width: 95%;
+        margin: 16px auto;
+        padding: 16px 8px;
+        box-sizing: border-box;
+    }
+    .spin-container {
+        background: rgb(223, 224, 223, 0.25);
+        height: 100px;
+        border-radius: 8px;
+        margin: 16px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 16px;
+    }
+    .spin-container ul {
+        gap: 24px;
+    }
+    .spin-container ul .door {
+        width: 90px;
+        height: 95px;
+    }
+    .spin-container ul .door .boxes .box {
+        font-size: 2rem;
+    }
+    .action-btns {
+        gap: 18px;
+    }
+    .action-btns button {
+        padding: 12px;
+        font-size: var(--sm-mobile-text);
+    }
+    .action-btns button i {
+        margin-right: 4px;
+    }
+
+    .dashboard .dash-container {
+        gap: 8px;
+    }
+    .dashboard .dash-container li .header p {
+        font-size: var(--sm-mobile-text);
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .dashboard .dash-container li .body {
+        padding: 0 8px;
+        font-size: var(--sm-mobile-text);
+    }
+    .dashboard .dash-container .win .body button {
+        font-size: var(--sm-mobile-text);
+        padding: 8px;
+    }
+    .dashboard .dash-container .bet .body .amount {
+        gap: 0;
+    }
+    .dashboard .dash-container .bet .body .amount #bet-amount-x input {
+        width: 48px;
+    }
+    .dashboard .dash-container .bet .body .amount #decrease-bet, .dashboard .dash-container .bet .body .amount #increase-bet {
+        background: var(--l2);
+        padding: 6px 8px;
+        border-radius: 2px;
+        color: var(--primary-color);
+        font-size: 8px;
+        cursor: pointer;
+    }
+    .dashboard .dash-container .bet .body .ready-bet {
+        gap: 18px;
+    }
+    .dashboard .dash-container .bet .body .ready-bet li {
+        font-size: var(--sm-mobile-text);
+    }
+
+    .transactions-log ul li button {
+        font-size: var(--sm-mobile-text);
+        padding: 8px;
+    }
+
+    footer p {
+        font-size: var(--sm-mobile-text);
+    }
+
+    /* Modals */
+    .modal-content {
+        padding: 24px;
+        width: 70%;
+        overflow-y: hidden;
+    }
+    .modal-content form .form-fields {
+        flex-direction: column;
+    }
+    .modal-content #register-btn, .modal-content #login-btn, .modal-content #deposit-btn, .modal-content #withdrawal-btn {
+        font-size: var(--sm-mobile-text);
+    }
+    .modal-content .close-btn button {
+        font-size: var(--sm-mobile-text);
+    }
+    .transactions-table, .payouts-table {
+        font-size: 14px;
+    }
+    .modal-content .close {
+        font-size: 18px;
+    }
+}
+
+
+#preloader {
+    background: #ffff url(/images/loader.svg) no-repeat center center;
+    max-width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    z-index: 999;
+}
