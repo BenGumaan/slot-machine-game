@@ -218,8 +218,8 @@ header .welcome-message #name {
     align-items: center;
     background: var(--white);
     box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4) inset;
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
     overflow: hidden;
     border-radius: 8px;
 }
@@ -317,16 +317,16 @@ header .welcome-message #name {
     background: var(--l1);
     border-radius: 4px;
     margin-top: 10px;
-    padding: 10px 18px;
+    padding: 10px;
     height: 100px;
 }
-.dashboard .dash-container .account-balance .balance-amount {
+.dashboard .dash-container .account-balance #balance-amount {
     color: var(--secondary-color);
     font-weight: var(--semi-bold);
 }
 .dashboard .dash-container .account-balance #bet-amount {
     color: var(--danger);
-    transform: translateY(-25px);
+    /* transform: translateY(-25px); */
     opacity: 0;
 
     /* Transition + tranformation */
@@ -362,14 +362,14 @@ header .welcome-message #name {
     background: var(--primary-color);
     color: var(--white);
 }
-.dashboard .dash-container .bet .body .amount #bet-amount-x {
+.dashboard .dash-container .bet .body .amount #bet-amount-field {
     display: flex;
     flex-direction: row;
     padding: 4px 10px;
     color: var(--black);
     font-size: var(--md-text);
 }
-.dashboard .dash-container .bet .body .amount #bet-amount-x input {
+.dashboard .dash-container .bet .body .amount #bet-amount-field input {
     width: 100px;
     color: var(--black);
     font-size: var(--sm-text);
@@ -377,7 +377,7 @@ header .welcome-message #name {
     border: 0.2px solid var(--l4);
     border-radius: 4px;
 }
-.dashboard .dash-container .bet .body .amount #bet-amount-x input:focus {
+.dashboard .dash-container .bet .body .amount #bet-amount-field input:focus {
     outline: none;
 }
 .dashboard .dash-container .bet .body .ready-bet {
@@ -404,7 +404,7 @@ header .welcome-message #name {
     color: var(--dark-brown);
     font-weight: var(--semi-bold);
 }
-.dashboard .dash-container .win .body button {
+.dashboard .dash-container .account-balance .body button {
     background: var(--l2);
     color: var(--primary-color);
     border-radius: 4px;
@@ -412,7 +412,7 @@ header .welcome-message #name {
     border: none;
     padding: 8px 18px;
 }
-.dashboard .dash-container .win .body button i {
+.dashboard .dash-container .account-balance .body button i {
     background: white;
     color: var(--primary-color);
     margin-right: 8px;
@@ -421,8 +421,8 @@ header .welcome-message #name {
     background: var(--primary-color);
     color: var(--white);
 } */
-.dashboard .dash-container .win .body button:hover,
-.dashboard .dash-container .win .body button i {
+.dashboard .dash-container .account-balance .body button:hover,
+.dashboard .dash-container .account-balance .body button i {
     background: var(--primary-color);
     color: var(--white);
 }
@@ -484,8 +484,8 @@ header .welcome-message #name {
     gap: 20px;
     border-radius: 8px;
     height: auto;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
+    /* overflow-y: scroll; */
+    /* scroll-behavior: smooth; */
   }
   .modal-content .title {
     color: var(--primary-color);
@@ -675,14 +675,14 @@ footer #heart {
         padding: 0 8px;
         font-size: var(--sm-mobile-text);
     }
-    .dashboard .dash-container .win .body button {
+    .dashboard .dash-container .account-balance .body button {
         font-size: var(--sm-mobile-text);
         padding: 8px;
     }
     .dashboard .dash-container .bet .body .amount {
         gap: 0;
     }
-    .dashboard .dash-container .bet .body .amount #bet-amount-x input {
+    .dashboard .dash-container .bet .body .amount #bet-amount-field input {
         width: 48px;
     }
     .dashboard .dash-container .bet .body .amount #decrease-bet, .dashboard .dash-container .bet .body .amount #increase-bet {
@@ -712,7 +712,7 @@ footer #heart {
     /* Modals */
     .modal-content {
         padding: 24px;
-        width: 70%;
+        width: 80%;
         overflow-y: hidden;
     }
     .modal-content form .form-fields {
