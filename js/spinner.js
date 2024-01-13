@@ -7,8 +7,8 @@
     const SYMBOLS_COUNT = {
         "🍎": 2,
         "🍉": 4,
-        // "🍕": 6,
-        // "🍗": 8
+        "🍕": 6,
+        "🍗": 8
     }
     const SYMBOL_VALUES = {
         "❓": 0,
@@ -141,12 +141,12 @@
                 );
             }
 
-            for (let i = pool.length - 1; i >= 0; i--) { // 1 - 1 => i = 0
+            for (let i = pool.length - 1; i >= 0; i--) {
                 const box = document.createElement("div");
                 box.classList.add("box");
                 box.style.width = door.clientWidth + "px";
                 box.style.height = door.clientHeight + "px";
-                box.textContent = pool[i]; // pool[0]
+                box.textContent = pool[i];
                 boxesClone.appendChild(box);
             }
             last.push(pool.pop());
@@ -223,7 +223,7 @@
         } else {
             balanceAmountNum.textContent = parseInt(balanceAmountNum.textContent) + parseInt(document.getElementById("addedAmount").value)
             betAmount.textContent = `+$${parseInt(document.getElementById("addedAmount").value)}`;
-            addToLocalStorage("Deposit");
+            addToLocalStorage_transactions("Deposit");
             document.getElementById('deposit-modal').style.display = "none";
             var fadeTarget = betAmount;
             fadeTarget.style.opacity = 1;
@@ -234,7 +234,6 @@
                 }
                 if (fadeTarget.style.opacity > 0) {
                     fadeTarget.style.opacity -= 0.1;
-                    // fadeTarget.style.transform = "translateY(2px)";
                 } else {
                     clearInterval(fadeEffect);
                 }
@@ -251,7 +250,7 @@
         } else {
             balanceAmountNum.textContent = parseInt(balanceAmountNum.textContent) - parseInt(document.getElementById("subtractedAmount").value)
             betAmount.textContent = `-$${parseInt(document.getElementById("subtractedAmount").value)}`;
-            addToLocalStorage("Withdrawal");
+            addToLocalStorage_transactions("Withdrawal");
             document.getElementById('withdrawal-modal').style.display = "none";
             var fadeTarget = betAmount;
             fadeTarget.style.opacity = 1;
@@ -262,7 +261,6 @@
                 }
                 if (fadeTarget.style.opacity > 0) {
                     fadeTarget.style.opacity -= 0.1;
-                    // fadeTarget.style.transform = "translateY(2px)";
                 } else {
                     clearInterval(fadeEffect);
                 }
