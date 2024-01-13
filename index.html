@@ -38,12 +38,9 @@
             <!-- Spin Section -->
             <div class="spin-container">    
                 <ul>
-                    <!-- <li class="door"><img src="images/question-mark-clipart-printable-3-1523808405.png" alt=""></li>
-                    <li class="door"><img src="images/question-mark-clipart-printable-3-1523808405.png" alt=""></li>
-                    <li class="door"><img src="images/question-mark-clipart-printable-3-1523808405.png" alt=""></li> -->
-                    <li class="door"><span class="boxes">X</span></li>
-                    <li class="door"><span class="boxes">X</span></li>
-                    <li class="door"><span class="boxes">X</span></li>
+                    <li class="door d-1"><span class="boxes"></span></li>
+                    <li class="door d-2"><span class="boxes"></span></li>
+                    <li class="door d-3"><span class="boxes"></span></li>
                 </ul>
             </div>
 
@@ -64,8 +61,9 @@
                             <p>Account Balance</p>
                         </div>
                         <div class="body">
-                            <p class="balance-amount">$<span id="balance-amount" >1000</span></p>
-                            <p id="bet-amount">-$<span id="bet-asmount" >0</span></p>
+                            <p id="balance-amount">$<span id="balance-amount-num" >1000</span></p>
+                            <p id="bet-amount"></p>
+                            <button class="cta" data-name="withdrawal"><i class="fa-solid fa-money-bill-transfer"></i> Withdrawal</button>
                         </div>
                     </li>
                     <li class="bet">
@@ -75,7 +73,7 @@
                         <div class="body">
                             <ul class="amount">
                                 <li id="decrease-bet"><i class="fa-solid fa-minus"> 10</i></li>
-                                <li id="bet-amount-x">$ <input type="number" name="" id="bet-amount-input" value="100"></li>
+                                <li id="bet-amount-field">$ <input type="number" name="" id="bet-amount-input" value="100"></li>
                                 <li id="increase-bet"><i class="fa-solid fa-plus"> 10</i></li>
                             </ul>
                             <ul class="ready-bet">
@@ -91,7 +89,7 @@
                         </div>
                         <div class="body">
                             <p class="win-amount">$<span id="win-amount">0</span></p>
-                            <button class="cta" data-name="withdrawal"><i class="fa-solid fa-money-bill-transfer"></i> Withdrawal</button>
+                            <!-- <button class="cta" data-name="withdrawal"><i class="fa-solid fa-money-bill-transfer"></i> Withdrawal</button> -->
                         </div>
                     </li>
                 </ul>
@@ -268,6 +266,7 @@
     <script src="js/spinner.js"></script>
     <script src="js/localStorage.js"></script>
     <script src="js/sign-up.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
 
 </body>
 </html>
