@@ -114,3 +114,11 @@ function fadeOutEffect() {
 }
 
 document.getElementById("spinner").addEventListener('click', fadeOutEffect);
+
+
+// Preloader
+$(document).ready( function() {
+  setTimeout(() => {
+      $('#preloader').css("display", "none");
+  }, 1000);
+})
